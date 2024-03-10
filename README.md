@@ -1,2 +1,1 @@
-# VenturPal
 # VenturePal
