@@ -21,11 +21,11 @@ Ensure you have the latest version of [Node.js](https://nodejs.org/) installed. 
 1. **Clone the repository:**
    Open Command Prompt or PowerShell and run:
    ```cmd
-   git clone https://github.com/yourusername/nature-spots-showcase.git
+   git clone https://github.com/cjordan223/VenturePal.git
    ```
 2. **Navigate to the project directory:**
    ```cmd
-   cd nature-spots-showcase
+   cd VenturePal
    ```
 3. **Install dependencies:**
    ```cmd
