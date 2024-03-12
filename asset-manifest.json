@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/VenturePal/static/css/main.dc0ea324.css",
+    "main.js": "/VenturePal/static/js/main.969c462f.js",
+    "static/media/forest.jpeg": "/VenturePal/static/media/forest.de3316012b55770c58da.jpeg",
+    "index.html": "/VenturePal/index.html",
+    "main.dc0ea324.css.map": "/VenturePal/static/css/main.dc0ea324.css.map",
+    "main.969c462f.js.map": "/VenturePal/static/js/main.969c462f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc0ea324.css",
+    "static/js/main.969c462f.js"
+  ]
+}
