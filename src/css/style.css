@@ -1,3 +1,92 @@
-body {
-    margin: 40px;
+/* using bootstrap */
+.card-container{
+    padding: 10px;
 }
+
+#submitme{
+    max-width: 400px;
+    padding-left: 30px;
+}
+
+.card-title, .card-text {
+    height: 50px; /* Adjust based on your content */
+    overflow: hidden;
+}
+
+.card {
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    object-fit: cover;
+    height: 200px; /* Adjust based on your preference */
+}
+
+
+.card img {
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the area without stretching */
+    width: 100%; /* Ensures the image is responsive */
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer button {
+    width: 48%; /* Adjust based on your layout */
+}
+
+/* HEADER & FOOTER */
+
+h1,h2,h3,h4,h5{
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.header {
+    background-color: #164841;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #007bff; /* Example background color */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000; /* Ensure it sits above other content */
+}
+
+body {
+    /*Need to optimize image*/
+    background-image: url('forest.jpeg'); /* Adjust the path as necessary */
+    background-size: 100% 100%; /* Stretches the image to fit exactly, but watch for distortion */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
