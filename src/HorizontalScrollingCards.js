@@ -15,10 +15,10 @@ const HorizontalScrollingCards = ({ natureSpots, onEdit, onDelete }) => {
                         <Card.Img variant="top" src={spot.imageUrl} />
 
                         <Card.Body>
-                            <Card.Title>{spot.name}</Card.Title>
-                            <Card.Text>
-                                {spot.description}
-                            </Card.Text>
+                        {/*    <Card.Title>{spot.name}</Card.Title>*/}
+                        {/*    <Card.Text>*/}
+                        {/*        {spot.description}*/}
+                        {/*    </Card.Text>*/}
 
                             <button onClick={() => onEdit(spot.id)}>Edit</button>
                             <button onClick={() => onDelete(spot.id)}>Delete</button>

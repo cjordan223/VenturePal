@@ -79,7 +79,15 @@ const App = () => {
     return (
 
         <div className="container-fluid custom-fluid">
-            <Header />
+            <Header/>
+
+
+            <HorizontalScrollingCards
+                natureSpots={natureSpots}
+                onEdit={handleEditInitiation}
+                onDelete={handleDeleteInitiation}
+            />
+
             <div className="row mt-4" id="submitme">
                 <h1>Add A Location</h1>
                 {/*<button className="btn btn-secondary mb-3" onClick={handleGenerateSpots}>Generate Random Spots</button>*/}
@@ -94,12 +102,6 @@ const App = () => {
                     <button className="btn-primary" type="submit">Add Nature Spot</button>
                 </form>
             </div>
-
-            <HorizontalScrollingCards
-                natureSpots={natureSpots}
-                onEdit={handleEditInitiation}
-                onDelete={handleDeleteInitiation}
-            />
 
 
             <EditModal
@@ -117,8 +119,7 @@ const App = () => {
             />
 
 
-
-            <Footer />
+            <Footer/>
         </div>
     );
 };

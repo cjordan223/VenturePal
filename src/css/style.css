@@ -17,7 +17,7 @@
 }
 
 .card {
-    max-width: 100px !important;
+    max-width: 180px !important;
     max-height: 160px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
@@ -29,9 +29,10 @@
 
 
 .card img {
+    padding-top: 10px;
     height: 145px; /* Fixed height for consistency */
 
-    width: 90px; /* Ensures the image is responsive */
+    width: 155px; /* Ensures the image is responsive */
 }
 
 .card-footer {
@@ -91,7 +92,9 @@ body {
 /* scrolling side to side */
 
 .scrolling-wrapper {
-    overflow-x: auto;
+    height: 230px;
+    margin-top: 50px;
+     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch; /* for mobile */
 }
@@ -100,6 +103,11 @@ body {
     display: inline-block;
     white-space: normal;
 }
+
+/* General container styling */
+
+
+
 
 
 
