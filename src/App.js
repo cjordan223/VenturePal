@@ -1,8 +1,9 @@
+// App.js
+
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
-import Header from "./Header";
+ import Header from "./Header";
 import Footer from "./Footer";
-import NatureSpot from './NatureSpot';
+import HorizontalScrollingCards from "./HorizontalScrollingCards";
 import EditModal from './EditModal';
 import './css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +15,7 @@ const App = () => {
         const savedSpots = localStorage.getItem('natureSpots');
         return savedSpots ? JSON.parse(savedSpots) : [];
     });
-    // const [natureSpots, setNatureSpots] = useState(generateRandomSpots(10));
+
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -29,19 +30,33 @@ const App = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const newSpot = { name, description, imageUrl };
+        const newSpot = {
+            id: Date.now().toString(), // unique ID generated from the current timestamp
+            name: name,
+            description: description,
+            imageUrl: imageUrl,
+        };
         setNatureSpots([...natureSpots, newSpot]);
+        // reset the form state
         setName('');
         setDescription('');
         setImageUrl('');
     };
 
-    const handleDelete = (indexToDelete) => {
-        const updatedSpots = natureSpots.filter((_, index) => index !== indexToDelete);
-        setNatureSpots(updatedSpots);
+    // Add this function inside your App component
+    const handleEditInitiation = (id) => {
+        const index = natureSpots.findIndex(spot => spot.id === id);
+        setCurrentEditingIndex(index); // Set the index of the spot we're editing
+        setModalShow(true); // Show the modal
+        setName(natureSpots[index].name);
+        setDescription(natureSpots[index].description);
+        setImageUrl(natureSpots[index].imageUrl);
     };
 
-    const handleDeleteInitiation = (index) => {
+
+
+    const handleDeleteInitiation = (id) => {
+        const index = natureSpots.findIndex(spot => spot.id === id);
         setDeleteIndex(index);
         setShowDeleteModal(true);
     };
@@ -59,22 +74,6 @@ const App = () => {
         setModalShow(false);
     };
 
-    const generateRandomSpots = () => {
-        const spots = [];
-        for (let i = 0; i < 10; i++) {
-            spots.push({
-                name: `Spot ${i + 1}`,
-                description: `Description for spot ${i + 1}`,
-                imageUrl: `https://picsum.photos/200/300?random=${i}`, // Random image URL from Picsum
-            });
-        }
-        return spots;
-    };
-
-    const handleGenerateSpots = () => {
-        const randomSpots = generateRandomSpots();
-        setNatureSpots(randomSpots);
-    };
 
 
     return (
@@ -96,17 +95,12 @@ const App = () => {
                 </form>
             </div>
 
+            <HorizontalScrollingCards
+                natureSpots={natureSpots}
+                onEdit={handleEditInitiation}
+                onDelete={handleDeleteInitiation}
+            />
 
-            <div className='row'>
-                {natureSpots.map((spot, index) => (
-                    <div key={index} className="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
-                            <NatureSpot spot={spot}/>
-                            <button className="btn btn-primary" onClick={() => handleEditInitiation(index)}>Edit
-                            </button>
-                            <button className="btn btn-danger" onClick={() => handleDeleteInitiation(index)}>Delete</button>
-                        </div>
-                    ))}
-            </div>
 
             <EditModal
                 show={modalShow}
@@ -122,9 +116,10 @@ const App = () => {
                 onConfirm={handleConfirmDelete}
             />
 
+
+
             <Footer />
         </div>
     );
 };
-
-ReactDOM.render(<App/>, document.getElementById('app'));
+export default App;

@@ -1,7 +1,10 @@
 /* using bootstrap */
+
 .card-container{
     padding: 10px;
 }
+
+
 
 #submitme{
     max-width: 400px;
@@ -14,7 +17,8 @@
 }
 
 .card {
-
+    max-width: 100px !important;
+    max-height: 160px !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
 }
@@ -23,16 +27,11 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card img {
-    object-fit: cover;
-    height: 200px; /* Adjust based on your preference */
-}
-
 
 .card img {
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures the image covers the area without stretching */
-    width: 100%; /* Ensures the image is responsive */
+    height: 145px; /* Fixed height for consistency */
+
+    width: 90px; /* Ensures the image is responsive */
 }
 
 .card-footer {
@@ -44,7 +43,7 @@
 }
 
 .card-footer button {
-    width: 48%; /* Adjust based on your layout */
+    width: 48%;
 }
 
 /* HEADER & FOOTER */
@@ -82,11 +81,25 @@ h1,h2,h3,h4,h5{
 
 body {
     /*Need to optimize image*/
-    background-image: url('forest.jpeg'); /* Adjust the path as necessary */
+    background-color: #6c757d; /* Adjust the path as necessary */
     background-size: 100% 100%; /* Stretches the image to fit exactly, but watch for distortion */
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
+
+/* scrolling side to side */
+
+.scrolling-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* for mobile */
+}
+
+.scrolling-wrapper .card {
+    display: inline-block;
+    white-space: normal;
+}
+
 
 
