@@ -1,14 +1,27 @@
 /* using bootstrap */
 
 .card-container{
+
     padding: 10px;
 }
 
-
+#scroll-row{
+    padding-top: 10px;
+    padding-left: 8px;
+}
 
 #submitme{
-    max-width: 400px;
+
     padding-left: 30px;
+     padding-bottom: 80px;
+}
+
+#location{
+    padding-top: 10px;
+}
+
+#weather{
+    width: 500px;
 }
 
 .card-title, .card-text {
@@ -16,12 +29,20 @@
     overflow: hidden;
 }
 
-.card {
-    max-width: 180px !important;
-    max-height: 160px !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
+#form-div{
+    border-radius: 20px;
+
+    background-color: #0c4523;
+    opacity: .9;
+
 }
+
+/*.card {*/
+/*    max-width: 180px !important;*/
+/*    max-height: 160px !important;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+/*    transition: 0.3s;*/
+/*}*/
 
 .card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -30,9 +51,9 @@
 
 .card img {
     padding-top: 10px;
-    height: 145px; /* Fixed height for consistency */
+    height: 195px; /* Fixed height for consistency */
 
-    width: 155px; /* Ensures the image is responsive */
+    width: 260px; /* Ensures the image is responsive */
 }
 
 .card-footer {
@@ -56,7 +77,7 @@ h1,h2,h3,h4,h5{
 }
 
 .header {
-    background-color: #164841;
+    background-color: #2f5c4d;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -73,7 +94,7 @@ h1,h2,h3,h4,h5{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #007bff; /* Example background color */
+    background-color: #001b25;
     color: white;
     text-align: center;
     padding: 10px 0;
@@ -82,24 +103,34 @@ h1,h2,h3,h4,h5{
 
 body {
     /*Need to optimize image*/
-    background-color: #6c757d; /* Adjust the path as necessary */
-    background-size: 100% 100%; /* Stretches the image to fit exactly, but watch for distortion */
+    background-image: url(pexels-johannes-plenio-1423600.jpg); /* Adjust the path as necessary */
+    background-size: cover; /* Ensures the image covers the entire background without distortion */
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
 
+
 /* scrolling side to side */
 
 .scrolling-wrapper {
-    height: 230px;
+    background-color: #0c4523;
+    opacity: .9;
+    border-radius: 25px;
+    height: 410px;
     margin-top: 50px;
      overflow-x: auto;
     white-space: nowrap;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch; /* for mobile */
 }
 
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
 .scrolling-wrapper .card {
+
     display: inline-block;
     white-space: normal;
 }

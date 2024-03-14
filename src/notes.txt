@@ -1,0 +1,24 @@
+add this for buttons:
+
+
+BUTTONGROUP
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
+function BasicExample() {
+  return (
+    <ButtonGroup aria-label="Basic example">
+      <Button variant="secondary">Left</Button>
+      <Button variant="secondary">Middle</Button>
+      <Button variant="secondary">Right</Button>
+    </ButtonGroup>
+  );
+}
+
+finish styling cards before moving on. consider completing entire frontend first, for portfolio. 
+scroll could be more intuitive
+
+add 2nd col to the form
+add search bar to top of 2 cols below list
+flesh out header
+

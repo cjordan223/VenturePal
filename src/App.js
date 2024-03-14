@@ -8,7 +8,6 @@ import EditModal from './EditModal';
 import './css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import DeleteConfirmationModal from "./DeleteConfirmationModal";
-
 const App = () => {
 
     const [natureSpots, setNatureSpots] = useState(() => {
@@ -79,7 +78,8 @@ const App = () => {
     return (
 
         <div className="container-fluid custom-fluid">
-            <Header/>
+            <Header />
+
 
 
             <HorizontalScrollingCards
@@ -89,9 +89,8 @@ const App = () => {
             />
 
             <div className="row mt-4" id="submitme">
-                <h1>Add A Location</h1>
-                {/*<button className="btn btn-secondary mb-3" onClick={handleGenerateSpots}>Generate Random Spots</button>*/}
-
+                <div id="form-div" className="col">
+                <h1 id="location">Add A Location</h1>
                 <form className="mb-3" onSubmit={handleSubmit}>
                     <input type="text" className="form-control" value={name} onChange={(e) => setName(e.target.value)}
                            placeholder="Name" required/><br/>
@@ -101,6 +100,13 @@ const App = () => {
                            onChange={(e) => setImageUrl(e.target.value)} placeholder="Image URL" required/><br/>
                     <button className="btn-primary" type="submit">Add Nature Spot</button>
                 </form>
+                </div>
+                <div className="col">
+
+
+                    <img src="https://cdn.firstcry.com/education/2022/12/09111755/Learn-about-Weather.jpg" id="weather" alt="WEATHER"/>
+                </div>
+
             </div>
 
 
