@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/VenturePal/static/css/main.519e7d9f.css",
-    "main.js": "/VenturePal/static/js/main.d9a872db.js",
+    "main.css": "/VenturePal/static/css/main.2d241583.css",
+    "main.js": "/VenturePal/static/js/main.2eaeba64.js",
     "static/media/pexels-johannes-plenio-1423600.jpg": "/VenturePal/static/media/pexels-johannes-plenio-1423600.945c1d4caed1b9f06592.jpg",
     "index.html": "/VenturePal/index.html",
-    "main.519e7d9f.css.map": "/VenturePal/static/css/main.519e7d9f.css.map",
-    "main.d9a872db.js.map": "/VenturePal/static/js/main.d9a872db.js.map"
+    "main.2d241583.css.map": "/VenturePal/static/css/main.2d241583.css.map",
+    "main.2eaeba64.js.map": "/VenturePal/static/js/main.2eaeba64.js.map"
   },
   "entrypoints": [
-    "static/css/main.519e7d9f.css",
-    "static/js/main.d9a872db.js"
+    "static/css/main.2d241583.css",
+    "static/js/main.2eaeba64.js"
   ]
 }
