@@ -1,21 +1,5 @@
 /* using bootstrap */
 
-.card-container{
-
-    padding: 10px;
-}
-
-#scroll-row{
-    padding-top: 10px;
-    padding-left: 8px;
-}
-
-#submitme{
-
-    padding-left: 50px;
-     padding-bottom: 80px;
-}
-
 #location{
     padding-top: 10px;
 }
@@ -26,57 +10,34 @@
 }
 
 .card-title, .card-text {
-    height: 50px; /* Adjust based on your content */
+    height: 50px;
     overflow: hidden;
 }
 
+
 #form-div{
     border-radius: 20px;
-
     background-color: #0c4523;
     opacity: .9;
-
-
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 45px;
 }
-
-/*.card {*/
-/*    max-width: 180px !important;*/
-/*    max-height: 160px !important;*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*    transition: 0.3s;*/
-/*}*/
 
 .card:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 
-.card img {
-    padding-top: 10px;
-    height: 195px; /* Fixed height for consistency */
-
-    width: 260px; /* Ensures the image is responsive */
-}
-
-.card-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: .75rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
-
-.card-footer button {
-    width: 48%;
-}
 
 /* HEADER & FOOTER */
 
 h1,h2,h3,h4,h5{
+    color: #0f5132;
     font-family: "Poppins", sans-serif;
     font-weight: 800;
     font-style: normal;
-}
+    }
 
 .header {
     background-color: #2f5c4d;
@@ -103,35 +64,57 @@ h1,h2,h3,h4,h5{
     z-index: 1000; /* Ensure it sits above other content */
 }
 
-.carousel img{
-    max-width: 800px;
-    max-height: 300px;
-    position: relative;
-    border-radius: 20px;
-}
+
+
 
 body {
-    /*Need to optimize image*/
-    background-image: url(pexels-johannes-plenio-1423600.jpg); /* Adjust the path as necessary */
+     background-image: url(pexels-johannes-plenio-1423600.jpg); /* Adjust the path as necessary */
     background-size: cover; /* Ensures the image covers the entire background without distortion */
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
 }
 
-#cj-holder {
-    padding-top: 40px;
-    padding-left: 300px;
-    padding-right: 300px;
+.carousel-item {
+    position: relative;
+    height: 300px; /* Fixed height for consistency */
+    width: 100%; /* Ensure the item spans the full width of the carousel */
+}
+
+.carousel-caption {
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center; /* Center the text within the caption */
+}
+
+/* Adjust this as needed to keep the image centered and prevent it from stretching */
+.carousel-item img {
+    max-height: 300px;
+    max-width: 950px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    margin: auto;
 }
 
 
-/* scrolling side to side */
+/*.carousel-item img {*/
+/*    max-height: 250px;*/
+/*    max-width: 250px;*/
+/*    width: auto; !* Maintain aspect ratio *!*/
+/*    height: auto; !* Maintain aspect ratio *!*/
+/*    margin: auto; !* Center the image *!*/
+/*    border-radius: 20px;*/
+/*}*/
 
-/* General container styling */
-
-
-
+/*.carousel-item {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100%; !* Make sure the Carousel.Item takes up the full height *!*/
+/*}*/
 
 
 

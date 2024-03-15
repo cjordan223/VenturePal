@@ -14,7 +14,7 @@ import EditModal from "./components/EditModal";
 import { Link } from 'react-router-dom';
 
 import { generateDummyData, massDeleteItems  } from './scripts';
-import {Button, ButtonGroup} from "react-bootstrap";
+import {Button, ButtonGroup, Row, Col, Container} from "react-bootstrap";
 import { useNavigate } from 'react-router-dom';
 
 const App = () => {
@@ -88,11 +88,10 @@ const App = () => {
         }
     };
 
-
     const handleConfirmDelete = () => {
         const updatedSpots = natureSpots.filter((_, index) => index !== deleteIndex);
         setNatureSpots(updatedSpots);
-        setShowDeleteModal(false); // Close the modal after confirming
+        setShowDeleteModal(false);
     };
 
     const handleSaveChanges = (updatedSpot, index) => {
@@ -102,76 +101,63 @@ const App = () => {
         setModalShow(false);
     };
 
-
-
-
-
-
     return (
         <Router>
 
-        <div className="container-fluid custom-fluid">
+        <Container>
             <Header />
-
-
-
-
                 <Routes>
-
-                <Route path="/VenturePal" element={
-                    <>
-                        <div id="cj-holder">
-                        <Carousel fade>
-                            {natureSpots.map((spot) => (
-                                <Carousel.Item key={spot.id}>
-                                    <img
-                                        className="d-block w-100"
-                                        src={spot.imageUrl}
-                                        alt={spot.name}
-                                    />
-                                    <Carousel.Caption>
-                                        <h3>{spot.name}</h3>
-                                        <p>{spot.description}</p>
-                                        <ButtonGroup aria-label="Basic example">
-                                            <Link to={`/spot/${spot.id}`} className="btn btn-secondary">View</Link>
-                                            <Button variant="primary" onClick={() => handleEditInitiation(spot.id)}>Edit</Button>
-                                            <Button variant="danger" onClick={() => handleDeleteInitiation(spot.id)}>Delete</Button>
-                                        </ButtonGroup>
-
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                            ))}
-                        </Carousel>
-                        </div>
+                    <Route path="/VenturePal" element={
+                        <>
+                                 <Row className="justify-content-md-center mb-5 mt-5">
+                                    <Carousel fade>
+                                        {natureSpots.map((spot) => (
+                                            <Carousel.Item key={spot.id}>
+                                                <img
+                                                    className="d-block w-100" /* Removed fixed max-width */
+                                                    src={spot.imageUrl}
+                                                    alt={spot.name}
+                                                />
+                                                <Carousel.Caption>
+                                                    <h3>{spot.name}</h3>
+                                                    <ButtonGroup aria-label="Basic example">
+                                                        <Link to={`/spot/${spot.id}`} className="btn btn-secondary">View</Link>
+                                                        <Button variant="primary" onClick={() => handleEditInitiation(spot.id)}>Edit</Button>
+                                                        <Button variant="danger" onClick={() => handleDeleteInitiation(spot.id)}>Delete</Button>
+                                                    </ButtonGroup>
+                                                </Carousel.Caption>
+                                            </Carousel.Item>
+                                        ))}
+                                    </Carousel>
+                                </Row>
 
 
+                            <Row>
+                                <Col>
+                                    <div id="form-div">
 
-                        <div className="row mt-4" id="submitme">
-                        <div id="form-div" className="col">
-                            <h1 id="location">Add A Location</h1>
-                            <form className="mb-3" onSubmit={handleSubmit}>
-                                <input type="text" className="form-control" value={name}
-                                       onChange={(e) => setName(e.target.value)}
-                                       placeholder="Name" required/><br/>
-                                <input type="text" className="form-control" value={description}
-                                       onChange={(e) => setDescription(e.target.value)} placeholder="Description"
-                                       required/><br/>
-                                <input type="text" className="form-control" value={imageUrl}
-                                       onChange={(e) => setImageUrl(e.target.value)} placeholder="Image URL"
-                                       required/><br/>
-                                <button className="btn-primary" type="submit">Add Nature Spot</button>
-                            </form>
-                        </div>
-                        <div className="col">
-
-
-                            <img src="https://cdn.firstcry.com/education/2022/12/09111755/Learn-about-Weather.jpg"
-                                 id="weather" alt="WEATHER"/>
-                        </div>
-
-                    </div>
-
-
+                                        <h1 id="location">Add A Location</h1>
+                                        <form className="mb-3" onSubmit={handleSubmit}>
+                                            <input type="text" className="form-control" value={name}
+                                                   onChange={(e) => setName(e.target.value)}
+                                                   placeholder="Name" required/><br/>
+                                            <input type="text" className="form-control" value={description}
+                                                   onChange={(e) => setDescription(e.target.value)}
+                                                   placeholder="Description"
+                                                   required/><br/>
+                                            <input type="text" className="form-control" value={imageUrl}
+                                                   onChange={(e) => setImageUrl(e.target.value)} placeholder="Image URL"
+                                                   required/><br/>
+                                            <button className="btn-primary" type="submit">Add Nature Spot</button>
+                                        </form>
+                                    </div>
+                                </Col>
+                                <Col>
+                                <img
+                                            src="https://cdn.firstcry.com/education/2022/12/09111755/Learn-about-Weather.jpg"
+                                            id="weather" alt="WEATHER"/>
+                                    </Col>
+                        </Row>
                     <EditModal
                         show={modalShow}
                         onHide={() => setModalShow(false)}
@@ -179,7 +165,6 @@ const App = () => {
                         onSave={handleSaveChanges}
                         index={currentEditingIndex}
                     />
-
                     <DeleteConfirmationModal
                         show={showDeleteModal}
                         onHide={() => setShowDeleteModal(false)}
@@ -187,18 +172,13 @@ const App = () => {
                     />
                 </>
             } />
-
                     <Route path="/search" element={<SearchResults natureSpots={natureSpots} />} />
                     <Route path="/spot/:id" element={<SpotDetail natureSpots={natureSpots} />} />
-
-
-
-
-
                 </Routes>
             <Footer/>
 
-        </div>
+        </Container>
+
         </Router>
     );
 };
