@@ -2,6 +2,7 @@
   "name": "venturepal",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:5000",
   "homepage": "https://cjordan223.github.io/VenturePal/",
   "main": "index.js",
   "scripts": {
@@ -34,6 +35,8 @@
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
     "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",

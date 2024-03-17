@@ -1,6 +1,3 @@
-//EditModal.js
-
-
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 
@@ -12,21 +9,21 @@ const EditModal = ({ show, onHide, spot, onSave, index }) => {
     });
 
     useEffect(() => {
-        //  ensures that spot is defined before trying to set state
         if (spot) {
-            setEditForm({ name: spot.name, description: spot.description, imageUrl: spot.imageUrl });
+            setEditForm({ ...spot });
         }
     }, [spot]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setEditForm(prevForm => ({ ...prevForm, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSave(editForm, index); // Pass the updated form and index back to the parent component
-        onHide(); // Close the modal
+        await onSave(editForm, index);
+        onHide(); // Close the modal and reset the modalShow state
     };
 
     return (
@@ -66,15 +63,12 @@ const EditModal = ({ show, onHide, spot, onSave, index }) => {
                             required
                         />
                     </Form.Group>
+                    <Button variant="secondary" onClick={onHide}>Close</Button>
+                    <Button variant="primary" type="submit">
+                        Save Changes
+                    </Button>
                 </Form>
             </Modal.Body>
-
-            <Modal.Footer>
-                <Button variant="secondary" onClick={onHide}>Close</Button>
-                <Button variant="primary" type="submit" onClick={handleSubmit}>
-                    Save Changes
-                </Button>
-            </Modal.Footer>
         </Modal>
     );
 };

@@ -64,11 +64,15 @@ h1,h2,h3,h4,h5{
     z-index: 1000; /* Ensure it sits above other content */
 }
 
-
-
+.toggle-button {
+    position: absolute;
+    top: 10px; /* Adjust based on your layout */
+    right: 10px; /* Adjust based on your layout */
+    z-index: 3; /* Ensure it's above the carousel image */
+}
 
 body {
-     background-image: url(pexels-johannes-plenio-1423600.jpg); /* Adjust the path as necessary */
+     background-image: url(../pexels-johannes-plenio-1423600.jpg); /* Adjust the path as necessary */
     background-size: cover; /* Ensures the image covers the entire background without distortion */
     background-position: center;
     background-repeat: no-repeat;
